@@ -74,7 +74,7 @@ const navigate = useNavigate();
             <div className={styles.rightSection}>
                 <div className={styles.buttonsWrapper}>
                     <button className={`${styles.button} ${styles.signUpButton}`}><Link to="/register">SignUp</Link></button>
-                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/login">Login</Link></button>
+                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/">Login</Link></button>
                 </div>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <h2 className={styles.title}>Login</h2>
