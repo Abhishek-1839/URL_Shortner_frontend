@@ -199,6 +199,7 @@ const Dashboard = () => {
 
           {/* Create Button & Profile Icon */}
           <div className={styles.headerIcons}>
+            
             <button className={styles.createButton} onClick={() => setIsModalOpen(true)}>
               + Create new
             </button>
@@ -235,7 +236,7 @@ const Dashboard = () => {
           onLinkAdded={fetchAnalytics}
         />
         <div className={styles.content}>
-          {location.pathname === "/" ? (
+          {location.pathname === "/dashboard" ? (
             <div className={styles.analyticsContainer}>
               <h2 className={styles.analyticsTitle}>Total Clicks:<span style={{color:"#0044ff", marginLeft:"10px"}}>{totalClicks} </span></h2>
 

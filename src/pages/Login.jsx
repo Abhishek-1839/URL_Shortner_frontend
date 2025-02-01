@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../api";
 import styles from "./Login.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Login = () => {
 
     const [errors, setErrors] = useState({});
     const [serverError, setServerError] = useState("");
-const navigate = useNavigate();
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,8 +36,7 @@ const navigate = useNavigate();
 // const decodedToken = jwtDecode(token);
 //         localStorage.setItem("userdata" ,JSON.stringify(decodedToken));
                 // Redirect to the dashboard or home page
-                navigate("/dashboard");   
-                // "/dashboard";
+                window.location.href = "/dashboard";
             } catch (error) {
                 // Handle server-side validation errors or network errors
                 if (error.response) {
@@ -74,7 +73,7 @@ const navigate = useNavigate();
             <div className={styles.rightSection}>
                 <div className={styles.buttonsWrapper}>
                     <button className={`${styles.button} ${styles.signUpButton}`}><Link to="/register">SignUp</Link></button>
-                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/">Login</Link></button>
+                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/login">Login</Link></button>
                 </div>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <h2 className={styles.title}>Login</h2>
