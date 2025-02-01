@@ -150,7 +150,7 @@ const Dashboard = () => {
           </Link>
         </div>
         <div className={styles.menuItem}>
-          <Link to="links">
+          <Link to="/links">
             <span style={{ marginRight: "10px" }}>
               <AttachFileOutlinedIcon />
             </span>
@@ -158,7 +158,7 @@ const Dashboard = () => {
           </Link>
         </div>
         <div className={styles.menuItem}>
-          <Link to="analytics">
+          <Link to="/analytics">
             <span style={{ marginRight: "10px" }}>
               <TrendingUpOutlinedIcon />
             </span>
@@ -166,7 +166,7 @@ const Dashboard = () => {
           </Link>
         </div>
         <div className={styles.settin}>
-          <Link to="settings">
+          <Link to="/settings">
             <span style={{ marginRight: "10px" }}>
               <SettingsOutlinedIcon />
             </span>
