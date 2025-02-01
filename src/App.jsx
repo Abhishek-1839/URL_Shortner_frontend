@@ -18,10 +18,10 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Login />} />
           {/* <Route path="*" element={<Register />} /> */}
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="/links" element={<DataTable />} />
-            <Route path="/analytics" element={<AnalyticTable />} />
-            <Route path="/settings" element={<UserProfile />} />
+          <Route path="/dashboard/" element={<Dashboard />}>
+            <Route path="links" element={<DataTable />} />
+            <Route path="analytics" element={<AnalyticTable />} />
+            <Route path="settings" element={<UserProfile />} />
           </Route>
           {/* <Route path="settings" element={} /> */}
         </Routes>
