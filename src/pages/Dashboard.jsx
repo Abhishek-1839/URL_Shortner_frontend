@@ -71,6 +71,7 @@ const Dashboard = () => {
       try {
         const decodedToken = jwtDecode(token);
         // localStorage.setItem("userdata" ,decodedToken);
+        console.log(decodedToken);  
         setUser(decodedToken); // Store the decoded user details
       } catch (error) {
         console.error("Invalid token", error);
@@ -180,7 +181,7 @@ const Dashboard = () => {
         {/* Header */}
         <div className={styles.header}>
         <div className={styles.greeting}>
-          🌞 Good morning, {user.name} <br />
+          🌞 Good morning {user.name} <br />
           <small style={{ fontWeight: "lighter", marginLeft: "30px" }}>
             {new Date().toDateString()}
           </small>
@@ -213,7 +214,7 @@ const Dashboard = () => {
             {/* Profile Icon */}
              <div className={styles.profileContainer} ref={dropdownRef}>
               <div className={styles.profileIcon} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                {user.name.charAt(0).toUpperCase()}
+               {user.name.charAt(0).toUpperCase()}
               </div>
               {isDropdownOpen && (
                 <div className={styles.profileDropdown}>
