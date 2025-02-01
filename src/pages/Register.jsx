@@ -62,7 +62,7 @@ const RegistrationForm = () => {
             <div className={styles.rightSection}>
                 <div className={styles.buttonsWrapper}>
                     <button className={`${styles.button} ${styles.signUpButton}`}><Link to="/register">SignUp</Link></button>
-                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/login">Login</Link> </button>
+                    <button className={`${styles.button} ${styles.loginButton}`}><Link to="/">Login</Link> </button>
                 </div>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <h2 className={styles.title}>Join Us Today!</h2>

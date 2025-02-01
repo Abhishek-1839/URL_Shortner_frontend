@@ -71,7 +71,6 @@ const Dashboard = () => {
       try {
         const decodedToken = jwtDecode(token);
         // localStorage.setItem("userdata" ,decodedToken);
-        console.log(decodedToken);  
         setUser(decodedToken); // Store the decoded user details
       } catch (error) {
         console.error("Invalid token", error);
@@ -86,7 +85,7 @@ const Dashboard = () => {
       await api.post("/auth/logout"); // Send logout request to backend
       localStorage.removeItem("token"); // Remove token from local storage
       setUser(null); // Clear user state
-      navigate("/login"); // Redirect to login page
+      navigate("/"); // Redirect to login page
     } catch (error) {
       console.error("Error logging out:", error);
     }
@@ -181,7 +180,7 @@ const Dashboard = () => {
         {/* Header */}
         <div className={styles.header}>
         <div className={styles.greeting}>
-          🌞 Good morning {user.name} <br />
+          🌞 Good morning, {user ? user.name : "Guest"} <br />
           <small style={{ fontWeight: "lighter", marginLeft: "30px" }}>
             {new Date().toDateString()}
           </small>
@@ -214,7 +213,7 @@ const Dashboard = () => {
             {/* Profile Icon */}
              <div className={styles.profileContainer} ref={dropdownRef}>
               <div className={styles.profileIcon} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-               {user.name.charAt(0).toUpperCase()}
+                {user ? user.name.charAt(0).toUpperCase() : "G"}
               </div>
               {isDropdownOpen && (
                 <div className={styles.profileDropdown}>
@@ -227,7 +226,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-     
+        {/* Greeting (Visible on Desktop Only) */}
        
 
         <NewLinkModal

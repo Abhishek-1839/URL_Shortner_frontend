@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import api from "../api";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-
+import { jwtDecode } from "jwt-decode";
 const Login = () => {
     const [formData, setFormData] = useState({
         email: "",
@@ -33,9 +33,10 @@ const Login = () => {
 
                 // Save the token to localStorage
                 localStorage.setItem("token", token);
-
+// const decodedToken = jwtDecode(token);
+//         localStorage.setItem("userdata" ,JSON.stringify(decodedToken));
                 // Redirect to the dashboard or home page
-                window.location.href = "/";
+                window.location.href = "/dashboard";
             } catch (error) {
                 // Handle server-side validation errors or network errors
                 if (error.response) {
