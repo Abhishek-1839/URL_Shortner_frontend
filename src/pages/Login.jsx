@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../api";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Login = () => {
 
     const [errors, setErrors] = useState({});
     const [serverError, setServerError] = useState("");
-
+const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,7 +36,8 @@ const Login = () => {
 // const decodedToken = jwtDecode(token);
 //         localStorage.setItem("userdata" ,JSON.stringify(decodedToken));
                 // Redirect to the dashboard or home page
-                window.location.href = "/dashboard";
+                navigate("/dashboard");   
+                // "/dashboard";
             } catch (error) {
                 // Handle server-side validation errors or network errors
                 if (error.response) {
