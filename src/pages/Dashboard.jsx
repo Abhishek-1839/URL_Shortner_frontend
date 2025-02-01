@@ -180,7 +180,7 @@ const Dashboard = () => {
         {/* Header */}
         <div className={styles.header}>
         <div className={styles.greeting}>
-          🌞 Good morning, {user ? user.name : "Guest"} <br />
+          🌞 Good morning, {user.name} <br />
           <small style={{ fontWeight: "lighter", marginLeft: "30px" }}>
             {new Date().toDateString()}
           </small>
@@ -213,7 +213,7 @@ const Dashboard = () => {
             {/* Profile Icon */}
              <div className={styles.profileContainer} ref={dropdownRef}>
               <div className={styles.profileIcon} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                {user ? user.name.charAt(0).toUpperCase() : "G"}
+                {user.name.charAt(0).toUpperCase()}
               </div>
               {isDropdownOpen && (
                 <div className={styles.profileDropdown}>
@@ -226,7 +226,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Greeting (Visible on Desktop Only) */}
+     
        
 
         <NewLinkModal
